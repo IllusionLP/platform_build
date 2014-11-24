@@ -22,7 +22,6 @@ PRODUCT_PACKAGES := \
     Camera2 \
     Gallery2 \
     OneTimeInitializer \
-    Provision \
     SystemUI \
     WallpaperCropper
 
