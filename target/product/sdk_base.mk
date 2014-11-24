@@ -29,10 +29,8 @@ PRODUCT_PACKAGES := \
 	GestureBuilder \
 	LegacyCamera \
 	librs_jni \
-	libwnndict \
 	LiveWallpapersPicker \
 	Music \
-	Protips \
 	rild \
 	SdkSetup \
 	SmokeTest \
