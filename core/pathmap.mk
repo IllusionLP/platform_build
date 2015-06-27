@@ -27,7 +27,6 @@
 # A mapping from shorthand names to include directories.
 #
 pathmap_INCL := \
-    bootloader:bootable/bootloader/legacy/include \
     camera:system/media/camera/include \
     frameworks-base:frameworks/base/include \
     frameworks-native:frameworks/native/include \
@@ -87,7 +86,6 @@ FRAMEWORKS_BASE_SUBDIRS := \
 	    sax \
 	    telecomm \
 	    telephony \
-	    phone \
 	    wifi \
 	    keystore \
 	    rs \
