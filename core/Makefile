@@ -1514,7 +1514,7 @@ $(INTERNAL_OTA_PACKAGE_TARGET): $(BUILT_TARGET_FILES_PACKAGE) $(DISTTOOLS)
 	   $(if $(OEM_OTA_CONFIG), -o $(OEM_OTA_CONFIG)) \
 	   $(BUILT_TARGET_FILES_PACKAGE) $@
 
-CUSTOM_TARGET_PACKAGE := $(PRODUCT_OUT)/AOSIP-$(ROM_VERSION).zip
+CUSTOM_TARGET_PACKAGE := $(PRODUCT_OUT)/Felix-$(ROM_VERSION).zip
 
 .PHONY: otapackage bacon
 otapackage: $(INTERNAL_OTA_PACKAGE_TARGET)
@@ -1522,30 +1522,30 @@ bacon: otapackage
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(CUSTOM_TARGET_PACKAGE)
 	$(hide) $(MD5SUM) $(CUSTOM_TARGET_PACKAGE) > $(CUSTOM_TARGET_PACKAGE).md5sum
 	@echo -e ""
-	@echo -e "${cya}Building ${bldcya}AOSiP ${txtrst}";
+	@echo -e "${cya}Building ${bldcya}Felix ${txtrst}";
 	@echo -e ""
-	@echo -e ${CL_CYN}"-----------------------------------------------------------"
-	@echo -e ${CL_MAG}"        / AAAAAA  / OOOOOO   /ssssss /ii| /PPPPPP          "
-	@echo -e ${CL_MAG}"       / AA__  AA/ OO__  OO /SS__ SS||__/| PP__ PP         "
-	@echo -e ${CL_MAG}"       | AA  \ AA| OO  \ OO| SS  \__/ /ii| PP  \ PP        "
-	@echo -e ${CL_MAG}"       | AAAAAAAA| OO  | OO|  SSSSSS | ii| PPPPPPP/        "
-	@echo -e ${CL_MAG}"       | AA__  AA| OO  | OO \____  SS| ii| PP____/         "
-	@echo -e ${CL_MAG}"       | AA  | AA| OO  | OO /SS  \ SS| ii| PP              "
-	@echo -e ${CL_MAG}"       | AA  | AA|  OOOOOO/| SSSSSS/ | ii| PP              "
-	@echo -e ${CL_MAG}"       |__/  |__/ \______/  \______/ |__/|__/              "
-	@echo -e ${CL_CYN}"-----------------------------------------------------------"
+	@echo -e ${CL_CYN}"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+	@echo -e ${CL_MAG}"        _______             __        ___      ___         "
+	@echo -e ${CL_MAG}"       /FFFFFFF/           /ll\   @@  \XX\    /XX/         "
+	@echo -e ${CL_MAG}"       |ffffff/  _____     |ll|   __   \XX\  /XX/          "
+	@echo -e ${CL_MAG}"       |FF|    /eeeeee\    |ll|  /ii\   \XX\/XX/           "
+	@echo -e ${CL_MAG}"       |FFfff/ |eee  ee|   |ll|  |ii|   /XXXXXX\           "
+	@echo -e ${CL_MAG}"       |FF|    |eeeeee/    |ll|  |ii|  /XXX/\XXX\          "
+	@echo -e ${CL_MAG}"       |FF|    |EE/______  |ll|  |ii| /XXX/  \XXX\         "
+	@echo -e ${CL_MAG}"       |FF|    \EEEEEEEEE\ |ll\  /ii\ \XX/    \XX/         "
+	@echo -e ${CL_CYN}"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 	@echo -e ""
-	@echo -e ${CL_CYN}"===========-Package complete-==========="${CL_RST}
+	@echo -e ${CL_CYN}"xxxxxxxxxxx-Mission Success-xxxxxxxxxxx"${CL_RST}
 	@echo -e ${CL_CYN}"zip: "${CL_MAG} $(CUSTOM_TARGET_PACKAGE)${CL_RST}
 	@echo -e ${CL_CYN}"md5: "${CL_MAG}" `cat $(CUSTOM_TARGET_PACKAGE).md5sum | cut -d ' ' -f 1`"${CL_RST}
 	@echo -e ${CL_CYN}"size:"${CL_MAG}" `ls -lah $(CUSTOM_TARGET_PACKAGE) | cut -d ' ' -f 5`"${CL_RST}
-	@echo -e ${CL_CYN}"========================================"${CL_RST}
+	@echo -e ${CL_CYN}"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"${CL_RST}
 	@echo -e ""
 
 ifeq ($(USE_PREBUILT_CHROMIUM),1)
 ifneq ($(PRODUCT_PREBUILT_WEBVIEWCHROMIUM),yes)
 	@echo -e ${CL_GRN}"Running Chromium prebuilt setup script..."${CL_RST}
-	$(hide) . $(TOPDIR)vendor/aosip/utils/chromium_prebuilt.sh $(TOP)
+	$(hide) . $(TOPDIR)vendor/felix/utils/chromium_prebuilt.sh $(TOP)
 endif
 endif
 
