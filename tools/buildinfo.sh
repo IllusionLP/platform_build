@@ -56,6 +56,6 @@ if [ -n "$BUILD_THUMBPRINT" ] ; then
 fi
 echo "ro.build.characteristics=$TARGET_AAPT_CHARACTERISTICS"
 
-echo "ro.felix.device=$CUSTOM_DEVICE"
+echo "ro.solo.device=$CUSTOM_DEVICE"
 
 echo "# end build properties"

@@ -931,7 +931,7 @@ INTERNAL_SYSTEMIMAGE_FILES := $(filter $(TARGET_OUT)/%, \
 
 systemimage-squisher: $(INTERNAL_SYSTEMIMAGE_FILES)
 	@echo -e "Optimizing PNGs to Shrink ROM Size!"
-	$(hide) APKCERTS=$(APKCERTS_FILE) ./vendor/felix/tools/squisher
+	$(hide) APKCERTS=$(APKCERTS_FILE) ./vendor/solo/tools/squisher
 
 .PHONY: systemimage-squisher
 
@@ -1514,7 +1514,7 @@ $(INTERNAL_OTA_PACKAGE_TARGET): $(BUILT_TARGET_FILES_PACKAGE) $(DISTTOOLS)
 	   $(if $(OEM_OTA_CONFIG), -o $(OEM_OTA_CONFIG)) \
 	   $(BUILT_TARGET_FILES_PACKAGE) $@
 
-CUSTOM_TARGET_PACKAGE := $(PRODUCT_OUT)/Felix-$(ROM_VERSION).zip
+CUSTOM_TARGET_PACKAGE := $(PRODUCT_OUT)/Solo-$(ROM_VERSION).zip
 
 .PHONY: otapackage bacon
 otapackage: $(INTERNAL_OTA_PACKAGE_TARGET)
@@ -1522,18 +1522,18 @@ bacon: otapackage
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(CUSTOM_TARGET_PACKAGE)
 	$(hide) $(MD5SUM) $(CUSTOM_TARGET_PACKAGE) > $(CUSTOM_TARGET_PACKAGE).md5sum
 	@echo -e ""
-	@echo -e "${cya}Building ${bldcya}Felix ${txtrst}";
+	@echo -e "${cya}Building ${bldcya}Solo ${txtrst}";
 	@echo -e ""
-	@echo -e ${CL_CYN}"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-	@echo -e ${CL_MAG}"        _______             __        ___      ___         "
-	@echo -e ${CL_MAG}"       /FFFFFFF/           /ll\   @@  \XX\    /XX/         "
-	@echo -e ${CL_MAG}"       |ffffff/  _____     |ll|   __   \XX\  /XX/          "
-	@echo -e ${CL_MAG}"       |FF|    /eeeeee\    |ll|  /ii\   \XX\/XX/           "
-	@echo -e ${CL_MAG}"       |FFfff/ |eee  ee|   |ll|  |ii|   /XXXXXX\           "
-	@echo -e ${CL_MAG}"       |FF|    |eeeeee/    |ll|  |ii|  /XXX/\XXX\          "
-	@echo -e ${CL_MAG}"       |FF|    |EE/______  |ll|  |ii| /XXX/  \XXX\         "
-	@echo -e ${CL_MAG}"       |FF|    \EEEEEEEEE\ |ll\  /ii\ \XX/    \XX/         "
-	@echo -e ${CL_CYN}"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+	@echo -e ${CL_CYN}"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+	@echo -e ${CL_MAG}"                                          "
+	@echo -e ${CL_MAG}"      ________           __               "
+	@echo -e ${CL_MAG}"     |   ___  |         |  |              "
+	@echo -e ${CL_MAG}"     |  /___\_|  _____  |  |  _____       "
+	@echo -e ${CL_MAG}"     |____   \  /     \ |  | /     \      "
+	@echo -e ${CL_MAG}"          |  |  |  |  | |  | |  |  |      "
+	@echo -e ${CL_MAG}"     |\___/  |  |  |  | |  | |  |  |      "
+	@echo -e ${CL_MAG}"     |_______/  \_____/ |__| \_____/      "
+	@echo -e ${CL_CYN}"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 	@echo -e ""
 	@echo -e ${CL_CYN}"xxxxxxxxxxx-Mission Success-xxxxxxxxxxx"${CL_RST}
 	@echo -e ${CL_CYN}"zip: "${CL_MAG} $(CUSTOM_TARGET_PACKAGE)${CL_RST}
@@ -1545,7 +1545,7 @@ bacon: otapackage
 ifeq ($(USE_PREBUILT_CHROMIUM),1)
 ifneq ($(PRODUCT_PREBUILT_WEBVIEWCHROMIUM),yes)
 	@echo -e ${CL_GRN}"Running Chromium prebuilt setup script..."${CL_RST}
-	$(hide) . $(TOPDIR)vendor/felix/utils/chromium_prebuilt.sh $(TOP)
+	$(hide) . $(TOPDIR)vendor/solo/utils/chromium_prebuilt.sh $(TOP)
 endif
 endif
 

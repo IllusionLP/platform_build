@@ -562,17 +562,17 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
 
   script.Print(" ")
   script.Print(" ")
-  script.Print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
-  script.Print(" _______             __        ___      ___ ")
-  script.Print("/FFFFFFF/           /ll\   @@  \XX\    /XX/ ")
-  script.Print("|ffffff/  _____     |ll|   __   \XX\  /XX/  ")
-  script.Print("|FF|    /eeeeee\    |ll|  /ii\   \XX\/XX/   ")
-  script.Print("|FFfff/ |eee  ee|   |ll|  |ii|   /XXXXXX\   ")
-  script.Print("|FF|    |eeeeee/    |ll|  |ii|  /XXX/\XXX\  ")
-  script.Print("|FF|    |EE/______  |ll|  |ii| /XXX/  \XXX\ ")
-  script.Print("|FF|    \EEEEEEEEE\ |ll\  /ii\ \XX/    \XX/ ")
-  script.Print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
-  script.Print("")
+  script.Print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
+  script.Print("                                          ")
+  script.Print("      ________           __               ")
+  script.Print("     |   ___  |         |  |              ")
+  script.Print("     |  /___\_|  _____  |  |  _____       ")
+  script.Print("     |____   \  /     \ |  | /     \      ")
+  script.Print("          |  |  |  |  | |  | |  |  |      ")
+  script.Print("     |\___/  |  |  |  | |  | |  |  |      ")
+  script.Print("     |_______/  \_____/ |__| \_____/      ")
+  script.Print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
+  script.Print(" ")
   script.Print("xxxxxxxxxxxxx-Mission Success-xxxxxxxxxxxxxx")
   script.Print(" ")
   script.Print(" ")
@@ -678,7 +678,7 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
   script.WriteRawImage("/boot", "boot.img")
 
   script.ShowProgress(0.2, 10)
-  script.Print("Enjoy Felix ROM");
+  script.Print("Welcome to the Solo project");
   device_specific.FullOTA_InstallEnd()
 
   if OPTIONS.extra_script is not None:

@@ -37,12 +37,12 @@ default_rem = "github"
 # set this to the default revision to use (branch/tag name)
 default_rev = "lollipop"
 # set this to the remote that you use for projects from your team repos
-# example fetch="https://github.com/felix"
-default_team_rem = "felix"
+# example fetch="https://github.com/solo"
+default_team_rem = "solo"
 # this shouldn't change unless google makes changes
 local_manifest_dir = ".repo/local_manifests"
 # change this to your name on github (or equivalent hosting)
-android_team = "felix"
+android_team = "solo"
 
 
 def check_repo_exists(git_data):
@@ -205,7 +205,7 @@ def parse_device_from_folder(device):
 
 
 def parse_dependency_file(location):
-    dep_file = "felix.dependencies"
+    dep_file = "solo.dependencies"
     dep_location = '/'.join([location, dep_file])
     if not os.path.isfile(dep_location):
         print("WARNING: %s file not found" % dep_location)
